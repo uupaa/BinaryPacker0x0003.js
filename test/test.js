@@ -1,23 +1,22 @@
-# BinaryPacker0x0003.js [![Build Status](https://travis-ci.org/uupaa/BinaryPacker0x0003.js.png)](http://travis-ci.org/uupaa/BinaryPacker0x0003.js)
+var ModuleTestBinaryPacker0x0003 = (function(global) {
 
-[![npm](https://nodei.co/npm/uupaa.binarypacker0x0003.js.png?downloads=true&stars=true)](https://nodei.co/npm/uupaa.binarypacker0x0003.js/)
+var _runOnNode = "process" in global;
+var _runOnWorker = "WorkerLocation" in global;
+var _runOnBrowser = "document" in global;
 
-APNGDecoder pack/unpack for BinaryPacker.js
+return new Test("BinaryPacker0x0003", {
+        disable:    false,
+        browser:    true,
+        worker:     true,
+        node:       true,
+        button:     true,
+        both:       true, // test the primary module and secondary module
+    }).add([
+        testBinaryPacker0x0003,
+    ]).run().clone();
 
-## Document
+function testBinaryPacker0x0003(test, pass, miss) {
 
-- [BinaryPacker0x0003.js wiki](https://github.com/uupaa/BinaryPacker0x0003.js/wiki/BinaryPacker0x0003)
-- [WebModule](https://github.com/uupaa/WebModule)
-    - [Slide](http://uupaa.github.io/Slide/slide/WebModule/index.html)
-    - [Development](https://github.com/uupaa/WebModule/wiki/Development)
-
-## How to use
-
-### Browser
-
-```js
-<script src="lib/BinaryPacker0x0003.js"></script>
-<script>
     var formatID = 0x0003; // APNGDecoder
     var frameData = [
             new APNGFrameData(0, 1, 2, 3, 4, 5.5, 6, 7),
@@ -53,26 +52,12 @@ APNGDecoder pack/unpack for BinaryPacker.js
         source.frameData[0]._pixels[2] === result.frameData[0]._pixels[2] &&
         source.frameData[0]._pixels[3] === result.frameData[0]._pixels[3]) {
 
-        console.log("OK");
-    } else {
-        console.log("NG");
+        test.done(pass());
+        return;
     }
+    test.done(miss());
+}
 
-</script>
-```
+})((this || 0).self || global);
 
-### WebWorkers
 
-```js
-importScripts("lib/BinaryPacker0x0003.js");
-
-...
-```
-
-### Node.js
-
-```js
-var BinaryPacker0x0003 = require("lib/BinaryPacker0x0003.js");
-
-...
-```
