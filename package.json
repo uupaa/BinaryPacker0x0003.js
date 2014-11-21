@@ -1,6 +1,6 @@
 {
   "name":           "uupaa.binarypacker0x0003.js",
-  "version":        "0.0.0",
+  "version":        "0.0.1",
   "description":    "APNGDecoder pack/unpack for BinaryPacker.js",
   "url":            "https://github.com/uupaa/BinaryPacker0x0003.js",
   "keywords":       ["APNGDecoder", "BinaryPacker", "uupaa", "WebModule", "Unstable"],
