@@ -28,6 +28,7 @@ function testBinaryPacker0x0003(test, pass, miss) {
     frameData[2]._pixels = new Uint8Array([30, 31, 32, 33, 35, 36]);
 
     var source = {
+            "_token": 123,
             "apng": true,
             "width": 2,
             "height": 3,
@@ -40,7 +41,8 @@ function testBinaryPacker0x0003(test, pass, miss) {
     var packed = BinaryPacker.pack(source, formatID);
     var result = BinaryPacker.unpack(packed);
 
-    if (source.apng === result.apng &&
+    if (source._token === result._token &&
+        source.apng === result.apng &&
         source.width === result.width &&
         source.height === result.height &&
         source.loopCount === result.loopCount &&
