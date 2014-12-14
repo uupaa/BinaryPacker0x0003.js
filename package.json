@@ -1,6 +1,6 @@
 {
   "name": "uupaa.binarypacker0x0003.js",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "APNGDecoder pack/unpack for BinaryPacker.js",
   "url": "https://github.com/uupaa/BinaryPacker0x0003.js",
   "keywords": [
@@ -45,11 +45,11 @@
       "@dev"
     ]
   },
-  "dependencies": {},
-  "devDependencies": {
+  "dependencies": {
     "uupaa.binarypacker.js": "",
     "uupaa.apngdecoder.js": ""
   },
+  "devDependencies": {},
   "lib": "./lib/",
   "main": "./index.js",
   "author": "uupaa",
